@@ -29,7 +29,9 @@
 # Calculate the prefix products
 # Calculate the suffix products
 # Multiply the prefix and suffix products to get the answer
+
 from typing import List
+
 
 def main(nums: List[int]) -> List[int]:
     # Create a list to store the products
