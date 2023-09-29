@@ -1,55 +1,7 @@
 # File for holding the problems and solutions
 # Benchmark CPU for every problem: I9-9900K
 from typing import List
-import sys
-import timeit
-
-
-def benchmark(function, *args, num_runs=1000):
-    """
-    Benchmark the given function with the provided arguments.
-
-    Parameters:
-    - function: The function to be benchmarked.
-    - *args: Arguments to pass to the function.
-    - num_runs: Number of times to run the function for benchmarking.
-
-    Returns:
-    - result: Result of the function execution.
-    - elapsed_time: Time taken for execution in seconds.
-    - memory_used: Approximate memory used by the result in bytes.
-    """
-
-    # Wrap the function call in a lambda to pass to timeit
-    func_lambda = lambda: function(*args)
-
-    # Use timeit to get the average time over multiple runs
-    total_time = timeit.timeit(func_lambda, number=num_runs)
-    average_time = total_time / num_runs
-
-    # Execute the function once to get the result and memory usage
-    result = function(*args)
-    memory_used = sys.getsizeof(result)
-
-    return result, average_time, memory_used
-
-
-def display_benchmark_results(
-    problem_name, function, time_complexity, space_complexity, *args
-):
-    result, elapsed_time, memory_used = benchmark(function, *args)
-    elapsed_time_us = elapsed_time * 1000 * 1000  # Convert to microseconds for better precision
-    
-    header = f"📋 Problem: {problem_name}"
-    inputs = f"🔠 Inputs: {', '.join(map(str, args))}"
-    output = f"🎯 Result: {result}"
-    
-    complexities = f"🛠 Time: {time_complexity} | Space: {space_complexity}"
-    metrics = f"⏱ Elapsed: {elapsed_time_us:.4f} μs | 📦 Memory: {memory_used} bytes"
-    
-    print(f"{header}\n{inputs}\n{output}\n{complexities}\n{metrics}")
-    print("─" * 40)
-
+from utilities import display_benchmark_results
 
 # Problem 1 - Contains Duplicate
 # Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
@@ -71,7 +23,7 @@ def display_benchmark_results(
 # -10^9 <= nums[i] <= 10^9
 
 # Solution Benchmark Analysis:
-# Runtime: 0.3779 ms
+# Runtime: 0.3347 μs
 # Memory Usage: 28 bytes
 # Time complexity: O(n)
 # Space complexity: O(n)
@@ -79,6 +31,7 @@ def display_benchmark_results(
 # Explanation:
 # Using a set to store the values and checking if the value is already in the set
 # Sets can only contain unique values, so if the value is already in the set, we know it's a duplicate
+
 
 def containsDuplicate(nums):
     # Create a set to hold the values
@@ -113,7 +66,7 @@ display_benchmark_results(
 # s and t consist of lowercase English letters.
 
 # Solution Benchmark Analysis:
-# Runtime: 1.76 ms
+# Runtime: 1.76 μs
 # Memory Usage: 28 bytes
 # Time complexity: O(n)
 # Space complexity: O(1)
@@ -122,6 +75,7 @@ display_benchmark_results(
 # Using a hashmap to store the character frequencies of 's'
 # Then decrementing the count for each character in 't'
 # If the count is already 0 or the character is not present, the strings are not anagrams
+
 
 def isAnagram(s, t):
     # Initial length check
@@ -176,7 +130,7 @@ display_benchmark_results(
 # Only one valid answer exists.
 
 # Solution Benchmark Analysis:
-# Runtime: 0.39 ms
+# Runtime: 0.39 μs
 # Memory Usage: 72 bytes
 # Time complexity: O(n)
 # Space complexity: O(n)
@@ -186,6 +140,7 @@ display_benchmark_results(
 # Checking if the complement exists in the dictionary
 # If it does, return the indices
 # If not, add the value to the dictionary
+
 
 def twoSum(nums, target):
     # Create a dictionary to store the values
@@ -224,7 +179,7 @@ display_benchmark_results("Two Sum", twoSum, "O(n)", "O(n)", [2, 7, 11, 15], 9)
 # strs[i] consists of lower-case English letters.
 
 # Solution Benchmark Analysis:
-# Runtime: 2.36 ms
+# Runtime: 2.36 μs
 # Memory Usage: 88 byes
 # Time complexity: O(n*klogk)
 # Space complexity: O(n)
@@ -273,7 +228,7 @@ display_benchmark_results(
 # It is guaranteed that the answer is unique.
 
 # Solution Benchmark Analysis:
-# Runtime: 1.87 ms
+# Runtime: 1.87 μs
 # Memory Usage: 72 bytes
 # Time complexity: O(n)
 # Space complexity: O(n)
@@ -284,19 +239,20 @@ display_benchmark_results(
 # Using a list of lists to store the elements grouped by their frequency
 # Collecting the elements from the list of lists to form the answer
 
+
 def top_k_frequent(nums: List[int], k: int) -> List[int]:
-    # Create a dictionary to store the frequencies    
+    # Create a dictionary to store the frequencies
     counts = {}
     for num in nums:
         counts[num] = counts.get(num, 0) + 1
-    
+
     # Create a list of lists to store the elements grouped by their frequency
     buckets = [[] for _ in range(len(nums) + 1)]
-    
+
     # Collect the elements from the list of lists to form the answer
     for num, freq in counts.items():
         buckets[freq].append(num)
-        
+
     # Reverse the list and collect the elements until we have k elements
     ans = []
     for freq in reversed(range(len(buckets))):
@@ -304,7 +260,10 @@ def top_k_frequent(nums: List[int], k: int) -> List[int]:
         if len(ans) >= k:
             return ans[:k]
 
-display_benchmark_results("Top K Frequent Elements", top_k_frequent, "O(n)", "O(n)", [1,1,1,2,2,3], 2)
+
+display_benchmark_results(
+    "Top K Frequent Elements", top_k_frequent, "O(n)", "O(n)", [1, 1, 1, 2, 2, 3], 2
+)
 
 # Problem 6 - Product of Array Except Self
 
@@ -326,7 +285,7 @@ display_benchmark_results("Top K Frequent Elements", top_k_frequent, "O(n)", "O(
 # The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
 
 # Solution Benchmark Analysis:
-# Runtime: 1.87 ms
+# Runtime: 1.87 μs
 # Memory Usage: 28 bytes
 # Time complexity: O(n)
 # Space complexity: O(1)
@@ -338,22 +297,26 @@ display_benchmark_results("Top K Frequent Elements", top_k_frequent, "O(n)", "O(
 # Calculate the suffix products
 # Multiply the prefix and suffix products to get the answer
 
+
 def productExceptSelf(nums: List[int]) -> List[int]:
     # Create a list to store the products
     products = [1] * len(nums)
-    
+
     # Calculate the prefix products
     prefix = 1
     for i in range(len(nums)):
         products[i] = prefix
         prefix *= nums[i]
-        
+
     # Calculate the suffix products
     suffix = 1
     for i in reversed(range(len(nums))):
         products[i] *= suffix
         suffix *= nums[i]
-        
+
     return products
 
-display_benchmark_results("Product of Array Except Self", productExceptSelf, "O(n)", "O(1)", [1,2,3,4])
+
+display_benchmark_results(
+    "Product of Array Except Self", productExceptSelf, "O(n)", "O(1)", [1, 2, 3, 4]
+)
