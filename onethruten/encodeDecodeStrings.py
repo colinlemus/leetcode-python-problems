@@ -26,18 +26,21 @@
 # Using a primary delimiter ":" to concatenate strings and a secondary delimiter ";" to mark the end of each string
 # Split the encoded string using the combined delimiter ":;"
 
+
 def encode(strs):
     # Use a primary delimiter ":" to concatenate strings and a secondary delimiter ";" to mark the end of each string
-    return ':;'.join(strs)
+    return ":;".join(strs)
+
 
 def decode(s):
     # Split the encoded string using the combined delimiter ":;"
-    return s.split(':;')
+    return s.split(":;")
+
 
 def main(strs):
     # Encode the strings
     encoded = encode(strs)
-    # Return the decoded string    
+    # Return the decoded string
     decoded = decode(encoded)
 
     return encoded, decoded

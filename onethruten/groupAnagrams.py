@@ -31,7 +31,9 @@
 # Sorting the words and using the sorted word as the key
 # If the sorted word is already in the hashmap, append the word to the list
 # If not, create a new list with the word as the first element
+
 from typing import List
+
 
 def main(strs: List[str]) -> List[List[str]]:
     anagram_groups = {}

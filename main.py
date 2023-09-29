@@ -10,6 +10,7 @@ from onethruten.topKFrequentElements import main as top_k_frequent
 from onethruten.productOfArrayExceptSelf import main as productExceptSelf
 from onethruten.validSudoku import main as validSudoku
 from onethruten.encodeDecodeStrings import main as encodeDecodeStrings
+from onethruten.longestConsecutiveSequence import main as longestConsecutiveSequence
 
 
 # Problem 1 - Contains Duplicate
@@ -74,4 +75,9 @@ display_benchmark_results("Valid Sudoku", validSudoku, "O(n^2)", "O(n^2)", test_
 # Problem 8 - Encode & Decode Strings
 display_benchmark_results(
     "Encode & Decode Strings", encodeDecodeStrings, "O(n)", "O(n)", "test"
+)
+
+# Problem 9 - Longest Consecutive Sequence
+display_benchmark_results(
+  "Longest Consecutive Sequence", longestConsecutiveSequence, "O(n)", "O(n)", [100,4,200,1,3,2]
 )
