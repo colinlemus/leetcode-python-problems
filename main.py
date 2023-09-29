@@ -9,6 +9,8 @@ from onethruten.groupAnagrams import main as group_anagrams
 from onethruten.topKFrequentElements import main as top_k_frequent
 from onethruten.productOfArrayExceptSelf import main as productExceptSelf
 from onethruten.validSudoku import main as validSudoku
+from onethruten.encodeDecodeStrings import main as encodeDecodeStrings
+
 
 # Problem 1 - Contains Duplicate
 display_benchmark_results(
@@ -68,3 +70,8 @@ test_board2 = [
 ]
 display_benchmark_results("Valid Sudoku", validSudoku, "O(n^2)", "O(n^2)", test_board1)
 display_benchmark_results("Valid Sudoku", validSudoku, "O(n^2)", "O(n^2)", test_board2)
+
+# Problem 8 - Encode & Decode Strings
+display_benchmark_results(
+    "Encode & Decode Strings", encodeDecodeStrings, "O(n)", "O(n)", "test"
+)
