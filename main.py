@@ -1,60 +1,55 @@
 # File for holding the problems and solutions
+# Benchmark CPU for every problem: I9-9900K
 import time
 import sys
 import timeit
 
+
 # Benchmarking function
-def benchmark(function, *args):
+def benchmark(function, *args, num_runs=1000):
     """
     Benchmark the given function with the provided arguments.
-    
+
     Parameters:
     - function: The function to be benchmarked.
     - *args: Arguments to pass to the function.
-    
+    - num_runs: Number of times to run the function for benchmarking.
+
     Returns:
     - result: Result of the function execution.
     - elapsed_time: Time taken for execution in seconds.
     - memory_used: Approximate memory used by the result in bytes.
     """
-    
+
     # Wrap the function call in a lambda to pass to timeit
     func_lambda = lambda: function(*args)
-    
+
     # Use timeit to get the average time over multiple runs
-    # Here, we'll run the function 1000 times by default
-    num_runs = 1000
     total_time = timeit.timeit(func_lambda, number=num_runs)
     average_time = total_time / num_runs
-    
+
     # Execute the function once to get the result and memory usage
     result = function(*args)
     memory_used = sys.getsizeof(result)
-    
+
     return result, average_time, memory_used
 
-def display_benchmark_results(problem_name, function, time_complexity, space_complexity, *args):
-    """
-    Benchmark the given function and display the results in a structured format.
-    
-    Parameters:
-    - problem_name: The name of the problem or task being benchmarked.
-    - function: The function to be benchmarked.
-    - time_complexity: Time complexity of the algorithm (as a string).
-    - space_complexity: Space complexity of the algorithm (as a string).
-    - *args: Arguments to pass to the function.
-    """
+
+# Adjusting the precision in the display function
+def display_benchmark_results(
+    problem_name, function, time_complexity, space_complexity, *args
+):
     result, elapsed_time, memory_used = benchmark(function, *args)
-    
-    # Print the results in a structured format
+    elapsed_time_ms = elapsed_time * 1000
     print(f"Problem: {problem_name}")
     print(f"Inputs: {', '.join(map(str, args))}")
     print(f"Result: {result}")
     print(f"Time Complexity: {time_complexity}")
     print(f"Space Complexity: {space_complexity}")
-    print(f"Elapsed Time: {elapsed_time:.2e} seconds")
+    print(f"Elapsed Time: {elapsed_time_ms* 1000:.4f} ms")  # Increased precision
     print(f"Memory Used: {memory_used} bytes")
     print("-" * 40)
+
 
 # Problem 1 - Contains Duplicate
 # Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
@@ -76,10 +71,11 @@ def display_benchmark_results(problem_name, function, time_complexity, space_com
 # -10^9 <= nums[i] <= 10^9
 
 # Solution
-# Runtime: 124 ms, faster than 99.23% of Python3 online submissions for Contains Duplicate.
-# Memory Usage: 21.5 MB, less than 5.04% of Python3 online submissions for Contains Duplicate.
+# Runtime: 0.3779 ms
+# Memory Usage: 28 bytes
 # Time complexity: O(n)
 # Space complexity: O(n)
+
 
 def containsDuplicate(nums):
     # Create a set to hold the values
@@ -91,7 +87,10 @@ def containsDuplicate(nums):
             values.add(num)
     return False
 
-display_benchmark_results("Contains Duplicate", containsDuplicate, "O(n)", "O(n)", [1,2,3,1])
+
+display_benchmark_results(
+    "Contains Duplicate", containsDuplicate, "O(n)", "O(n)", [1, 2, 3, 1]
+)
 
 # Problem 2 - Valid Anagram
 # Given two strings s and t, return true if t is an anagram of s, and false otherwise.
@@ -111,12 +110,15 @@ display_benchmark_results("Contains Duplicate", containsDuplicate, "O(n)", "O(n)
 # s and t consist of lowercase English letters.
 
 # Solution
+# Runtime: 1.76 ms
+# Memory Usage: 28 bytes
+
 
 def isAnagram(s, t):
     # Initial length check
     if len(s) != len(t):
         return False
-  
+
     # Single hashmap to store character frequencies
     characterCount = {}
 
@@ -134,8 +136,11 @@ def isAnagram(s, t):
     # If we've gone through both strings without returning False, they must be anagrams
     return True
 
+
 display_benchmark_results("Valid Anagram", isAnagram, "O(n)", "O(1)", "rat", "car")
-display_benchmark_results("Valid Anagram", isAnagram, "O(n)", "O(1)", "anagram", "nagaram")
+display_benchmark_results(
+    "Valid Anagram", isAnagram, "O(n)", "O(1)", "anagram", "nagaram"
+)
 
 # Problem 3 - Two Sum
 # Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -162,10 +167,11 @@ display_benchmark_results("Valid Anagram", isAnagram, "O(n)", "O(1)", "anagram",
 # Only one valid answer exists.
 
 # Solution
-# Runtime: 44 ms, faster than 99.34% of Python3 online submissions for Two Sum.
-# Memory Usage: 14.5 MB, less than 55.58% of Python3 online submissions for Two Sum.
+# Runtime: 0.39 ms
+# Memory Usage: 72 bytes
 # Time complexity: O(n)
 # Space complexity: O(n)
+
 
 def twoSum(nums, target):
     # Create a dictionary to store the values
@@ -178,4 +184,5 @@ def twoSum(nums, target):
         else:
             values[num] = i
 
-display_benchmark_results("Two Sum", twoSum, "O(n)", "O(n)", [2,7,11,15], 9)
+
+display_benchmark_results("Two Sum", twoSum, "O(n)", "O(n)", [2, 7, 11, 15], 9)
