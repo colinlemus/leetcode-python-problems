@@ -11,6 +11,7 @@ from onethruten.productOfArrayExceptSelf import main as productExceptSelf
 from onethruten.validSudoku import main as validSudoku
 from onethruten.encodeDecodeStrings import main as encodeDecodeStrings
 from onethruten.longestConsecutiveSequence import main as longestConsecutiveSequence
+from onethruten.validPalindrome import main as validPalindrome
 
 
 # Problem 1 - Contains Duplicate
@@ -79,5 +80,21 @@ display_benchmark_results(
 
 # Problem 9 - Longest Consecutive Sequence
 display_benchmark_results(
-  "Longest Consecutive Sequence", longestConsecutiveSequence, "O(n)", "O(n)", [100,4,200,1,3,2]
+    "Longest Consecutive Sequence",
+    longestConsecutiveSequence,
+    "O(n)",
+    "O(n)",
+    [100, 4, 200, 1, 3, 2],
+)
+
+# Problem 10 - Valid Palindrome
+display_benchmark_results(
+    "Valid Palindrome",
+    validPalindrome,
+    "O(n)",
+    "O(n)",
+    "A man, a plan, a canal: Panama",
+)
+display_benchmark_results(
+    "Valid Palindrome", validPalindrome, "O(n)", "O(n)", "race a car"
 )
