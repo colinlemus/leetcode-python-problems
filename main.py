@@ -74,10 +74,10 @@ def displayOneThruTen():
         [".", ".", ".", ".", "8", ".", ".", "7", "9"],
     ]
     display_benchmark_results(
-        "Valid Sudoku", validSudoku, "O(n^2)", "O(n^2)", test_board1
+        "Valid Sudoku", validSudoku, "O(1)", "O(1)", test_board1
     )
     display_benchmark_results(
-        "Valid Sudoku", validSudoku, "O(n^2)", "O(n^2)", test_board2
+        "Valid Sudoku", validSudoku, "O(1)", "O(1)", test_board2
     )
 
     # Problem 8 - Encode & Decode Strings

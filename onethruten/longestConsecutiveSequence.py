@@ -20,11 +20,12 @@
 # Space complexity: O(n)
 
 # Explanation:
-# Using a set to store the values
-# Checking if the number is the start of a sequence
-# If it is, check for consecutive numbers in the positive direction
-# If not, continue to the next number
-# Return the max length
+# This algorithm finds the length of the longest consecutive sequence in an input array of integers.
+# The algorithm first checks if the input array is empty, and then converts the input array into a set for quick lookups.
+# The algorithm then iterates over the set and checks if each number is the start of a sequence.
+# If a number is the start of a sequence, the algorithm checks for consecutive numbers in the positive direction and updates the maximum length seen so far.
+# The algorithm returns the maximum length of a consecutive sequence.
+# This algorithm has a time complexity of O(n) and a space complexity of O(n), where n is the length of the input array.
 
 
 def main(nums):

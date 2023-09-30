@@ -22,11 +22,14 @@
 # Space complexity: O(n)
 
 # Explanation:
-# Using bucket sort
-# Using a dictionary to store the frequencies of each element
-# Using a list of lists to store the elements grouped by their frequency
-# Collecting the elements from the list of lists to form the answer
+# This algorithm finds the k most frequent elements in an input list of integers utilizing bucket sort.
+# The algorithm first creates a dictionary to store the frequencies of the elements in the input list.
+# The algorithm then creates a list of lists to store the elements grouped by their frequency.
+# The algorithm then collects the elements from the list of lists to form the answer, starting from the elements with the highest frequency.
+# The algorithm returns the k most frequent elements. This algorithm has a time complexity of O(n) and a space complexity of O(n), where n is the length of the input list.
+
 from typing import List
+
 
 def main(nums: List[int], k: int) -> List[int]:
     # Create a dictionary to store the frequencies

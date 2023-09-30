@@ -22,9 +22,15 @@
 # Space complexity: O(1)
 
 # Explanation:
-# Using a hashmap to store the character frequencies of 's'
-# Then decrementing the count for each character in 't'
-# If the count is already 0 or the character is not present, the strings are not anagrams
+# This algorithm checks if two input strings are anagrams of each other.
+# The algorithm first checks if the two strings have the same length.
+# If they do not have the same length, they cannot be anagrams.
+# The algorithm then uses a single hashmap to store the character frequencies of the first string.
+# The algorithm increments the count for each character in the first string.
+# The algorithm then decrements the count for each character in the second string.
+# If a character is not present in the hashmap or its count is already 0, the strings are not anagrams.
+# If the algorithm goes through both strings without returning False, the strings must be anagrams.
+# This algorithm has a time complexity of O(n) and a space complexity of O(n), where n is the length of the input strings.
 
 
 def main(s, t):

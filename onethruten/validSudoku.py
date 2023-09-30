@@ -40,16 +40,17 @@
 # Solution Benchmark Analysis:
 # Runtime: 18 μs (valid) 5 μs (invalid)
 # Memory Usage: 28 bytes (valid) 24 bytes (invalid)
-# Time complexity: O(n^2)
-# Space complexity: O(n^2)
+# Time complexity: O(1)
+# Space complexity: O(1)
 
 # Explanation:
-# Using sets to store the values in each row, column, and box
-# Checking if the value is already in the set
-# If it is, the board is not valid
-# If not, add the value to the set
-# Return True if the board is valid
-# Return False if the board is not valid
+# This algorithm checks if a given 9x9 Sudoku board is valid.
+# The algorithm first creates three sets to store the values in each row, column, and box of the board.
+# The algorithm then iterates over the board and checks if each value is already in the corresponding set for its row, column, and box.
+# If a value is already in one of the sets, the board is not valid.
+# If a value is not in any of the sets, the algorithm adds the value to the corresponding sets.
+# If the algorithm goes through the entire board without returning False, the board is valid.
+# This algorithm has a time complexity of O(1) and a space complexity of O(1), because the size of the board is fixed.
 
 
 def main(board):
