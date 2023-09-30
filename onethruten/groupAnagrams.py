@@ -27,10 +27,10 @@
 # Space complexity: O(n*k)
 
 # Explanation:
-# This algorithm groups the input list of strings into anagrams. 
-# The algorithm sorts each string in the input list and uses the sorted string as the key in a hashmap. 
-# If two strings are anagrams, they will have the same sorted string, so the algorithm groups them together in the same list in the hashmap. 
-# The algorithm returns the values of the hashmap as a list of lists, where each inner list contains the anagram group. 
+# This algorithm groups the input list of strings into anagrams.
+# The algorithm sorts each string in the input list and uses the sorted string as the key in a hashmap.
+# If two strings are anagrams, they will have the same sorted string, so the algorithm groups them together in the same list in the hashmap.
+# The algorithm returns the values of the hashmap as a list of lists, where each inner list contains the anagram group.
 # This algorithm has a time complexity of O(n*klogk) and a space complexity of O(n*k), where n is the length of the input list and k is the maximum length of a string in the input list.
 
 from typing import List
