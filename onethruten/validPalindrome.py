@@ -20,17 +20,17 @@
 # Space complexity: O(n)
 
 # Explanation:
-# Using two pointers to compare characters from both ends of the string
-# Convert string to lowercase and remove non-alphanumeric characters
-# If the characters don't match, the string is not a palindrome
-# If the characters match, increment the left pointer and decrement the right pointer
-# Return True if the string is a palindrome
-# Return False if the string is not a palindrome
+# This algorithm checks if an input string is a valid palindrome.
+# The algorithm first converts the input string to lowercase and removes all non-alphanumeric characters.
+# The algorithm then uses two pointers to compare characters from both ends of the string.
+# If the characters at the two pointers are not equal, the string is not a valid palindrome.
+# If the algorithm goes through the entire string without returning False, the string is a valid palindrome. # This algorithm has a time complexity of O(n) and a space complexity of O(n), where n is the length of the input string.
+
 
 def main(s: str) -> bool:
     # Convert string to lowercase and remove non-alphanumeric characters
-    s = ''.join(filter(str.isalnum, s.lower()))
-    
+    s = "".join(filter(str.isalnum, s.lower()))
+
     # Use two pointers to compare characters from both ends of the string
     left, right = 0, len(s) - 1
     while left < right:
@@ -38,5 +38,5 @@ def main(s: str) -> bool:
             return False
         left += 1
         right -= 1
-    
+
     return True

@@ -24,11 +24,11 @@
 # Space complexity: O(1)
 
 # Explanation:
-# Using prefix and suffix products
-# Create a list to store the products
-# Calculate the prefix products
-# Calculate the suffix products
-# Multiply the prefix and suffix products to get the answer
+# This algorithm finds the product of all elements in an input list except for the element at the current index. # The algorithm first creates a list to store the output products, and initializes it with 1.
+# The algorithm then calculates the prefix products of the input list, which are the products of all elements to the left of the current index.
+# The algorithm then calculates the suffix products of the input list, which are the products of all elements to the right of the current index.
+# The algorithm then multiplies the prefix and suffix products to get the final product of all elements except for the element at the current index.
+# The algorithm returns the list of products. This algorithm has a time complexity of O(n) and a space complexity of O(n), where n is the length of the input list.
 
 from typing import List
 

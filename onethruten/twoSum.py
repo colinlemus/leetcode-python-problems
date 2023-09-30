@@ -29,10 +29,11 @@
 # Space complexity: O(n)
 
 # Explanation:
-# Using a dictionary to store the values
-# Checking if the complement exists in the dictionary
-# If it does, return the indices
-# If not, add the value to the dictionary
+# This algorithm finds the indices of two numbers in an input list of integers that add up to a target value. # The algorithm first creates a dictionary to store the values of the input list.
+# The algorithm then iterates over the input list and checks if the complement of the current number exists in the dictionary.
+# If the complement exists, the algorithm returns the indices of the two numbers.
+# If the complement does not exist, the algorithm adds the current number to the dictionary.
+# This algorithm has a time complexity of O(n) and a space complexity of O(n), where n is the length of the input list.
 
 
 def main(nums, target):
