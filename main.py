@@ -110,6 +110,8 @@ def displayOneThruTen():
 from twothrutwenty.twoSumSorted import main as twoSumSorted
 from twothrutwenty.threeSum import main as threeSum
 from twothrutwenty.containerMostWater import main as containerMostWater
+from twothrutwenty.trappingRainWater import main as trappingRainWater
+from twothrutwenty.bestTimeBuySellStock import main as bestTimeBuySellStock
 
 
 def displayTwoThruTwenty():
@@ -128,6 +130,24 @@ def displayTwoThruTwenty():
         "O(n)",
         "O(1)",
         [1, 8, 6, 2, 5, 4, 8, 3, 7],
+    )
+
+    # Problem 14 - Trapping Rain Water
+    display_benchmark_results(
+        "Trapping Rain Water",
+        trappingRainWater,
+        "O(n)",
+        "O(1)",
+        [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1],
+    )
+
+    # Problem 15 - Best Time to Buy and Sell Stock
+    display_benchmark_results(
+        "Best Time to Buy and Sell Stock",
+        bestTimeBuySellStock,
+        "O(n)",
+        "O(1)",
+        [7, 1, 5, 3, 6, 4],
     )
 
 
