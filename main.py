@@ -15,6 +15,7 @@ from onethruten.validPalindrome import main as validPalindrome
 
 
 def displayOneThruTen():
+    # Start of Array & Hashing problems
     # Problem 1 - Contains Duplicate
     display_benchmark_results(
         "Contains Duplicate", containsDuplicate, "O(n)", "O(n)", [1, 2, 3, 1]
@@ -90,6 +91,7 @@ def displayOneThruTen():
         [100, 4, 200, 1, 3, 2],
     )
 
+    # Start of Two Pointer problems
     # Problem 10 - Valid Palindrome
     display_benchmark_results(
         "Valid Palindrome",
@@ -108,9 +110,12 @@ from twothrutwenty.threeSum import main as threeSum
 from twothrutwenty.containerMostWater import main as containerMostWater
 from twothrutwenty.trappingRainWater import main as trappingRainWater
 from twothrutwenty.bestTimeBuySellStock import main as bestTimeBuySellStock
+from twothrutwenty.longestSubstringNoRepeatCharacters import (
+    main as longestSubstringWithoutRepeatingCharacters,
+)
 
 
-def displayTwoThruTwenty():
+def displayTenThruTwenty():
     # Problem 11 - Two Sum II - Sorted
     display_benchmark_results(
         "Two Sum II - Sorted", twoSumSorted, "O(n)", "O(1)", [2, 7, 11, 15], 9
@@ -137,6 +142,7 @@ def displayTwoThruTwenty():
         [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1],
     )
 
+    # Start of Sliding Window problems
     # Problem 15 - Best Time to Buy and Sell Stock
     display_benchmark_results(
         "Best Time to Buy and Sell Stock",
@@ -146,11 +152,67 @@ def displayTwoThruTwenty():
         [7, 1, 5, 3, 6, 4],
     )
 
+    # Problem 16 - Longest Substring Without Repeating Characters
+    display_benchmark_results(
+        "Longest Substring Without Repeating Characters",
+        longestSubstringWithoutRepeatingCharacters,
+        "O(n)",
+        "O(min(n, m))",
+        "abcabcbb",
+    )
+
+    # Problem 17 - Longest Repeating Character Replacement
+
+    # Problem 18 - Minimum Window Substring
+
+    # Problem 19 - Sliding Window Maximum
+
+
+def displayTwentyThruThirty():
+    # Start of Stack problems
+    # Problem 20 - Valid Parentheses
+
+    # Problem 21 - Min Stack
+
+    # Problem 22 - Evaluate Reverse Polish Notation
+
+    # Problem 23 - Generate Parentheses
+
+    # Problem 24 - Daily Temperatures
+
+    # Problem 25 - Car Fleet
+
+    # Problem 26 - Largest Rectangle in Histogram
+
+    # Start of Binary Search problems
+    # Problem 27 - Binary Search
+
+    # Problem 28 - Search a 2D Matrix
+
+    # Problem 29 - Koko Eating Bananas
+
+    return
+
+def displayThirtyThruForty():
+    # Problem 30 - Find Minimum in Rotated Sorted Array
+
+    # Problem 31 - Search in Rotated Sorted Array
+
+    # Problem 32 - Time Based Key-Value Store
+
+    # Problem 33 - Median of Two Sorted Arrays
+
+    # Start of Linked List problems
+
+    return
+
 
 # Create a dictionary to map user input to functions
 folder_functions = {
     1: displayOneThruTen,
-    2: displayTwoThruTwenty,
+    2: displayTenThruTwenty,
+    3: displayTwentyThruThirty,
+    4: displayThirtyThruForty,
 }
 
 while True:
