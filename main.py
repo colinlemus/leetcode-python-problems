@@ -73,12 +73,8 @@ def displayOneThruTen():
         [".", ".", ".", "4", "1", "9", ".", ".", "5"],
         [".", ".", ".", ".", "8", ".", ".", "7", "9"],
     ]
-    display_benchmark_results(
-        "Valid Sudoku", validSudoku, "O(1)", "O(1)", test_board1
-    )
-    display_benchmark_results(
-        "Valid Sudoku", validSudoku, "O(1)", "O(1)", test_board2
-    )
+    display_benchmark_results("Valid Sudoku", validSudoku, "O(1)", "O(1)", test_board1)
+    display_benchmark_results("Valid Sudoku", validSudoku, "O(1)", "O(1)", test_board2)
 
     # Problem 8 - Encode & Decode Strings
     display_benchmark_results(
