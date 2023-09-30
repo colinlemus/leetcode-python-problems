@@ -31,6 +31,7 @@
 def main(nums):
     # Create a set to hold the values
     values = set()
+    
     for num in nums:
         if num in values:
             return True

@@ -3,10 +3,6 @@
 1. [Introduction](#introduction)
 2. [Installation](#installation)
 3. [Usage](#usage)
-4. [Problems and Solutions](#problems-and-solutions)
-    1. [Contains Duplicate](#contains-duplicate)
-5. [Benchmarking](#benchmarking)
-6. [Contributing](#contributing)
 
 ---
 
@@ -25,5 +21,6 @@ This repository contains a collection of algorithmic problems and their solution
 
 ## Usage
 
-1. Each problem is defined as a Python function.
+1. Each problem is defined as a Python function in its own file.
 2. Use the `display_benchmark_results` utility to run and benchmark the solution.
+3. Run `main.py` to get detailed feedback about the problems, inputs, results, time complexity, space complexity, elapsed time, and memory usage.
