@@ -108,6 +108,7 @@ from twothrutwenty.threeSum import main as threeSum
 from twothrutwenty.containerMostWater import main as containerMostWater
 from twothrutwenty.trappingRainWater import main as trappingRainWater
 from twothrutwenty.bestTimeBuySellStock import main as bestTimeBuySellStock
+from twothrutwenty.longestSubstringNoRepeatCharacters import main as longestSubstringWithoutRepeatingCharacters
 
 
 def displayTwoThruTwenty():
@@ -144,6 +145,15 @@ def displayTwoThruTwenty():
         "O(n)",
         "O(1)",
         [7, 1, 5, 3, 6, 4],
+    )
+
+    # Problem 16 - Longest Substring Without Repeating Characters
+    display_benchmark_results(
+        "Longest Substring Without Repeating Characters",
+        longestSubstringWithoutRepeatingCharacters,
+        "O(n)",
+        "O(min(n, m))",
+        "abcabcbb",
     )
 
 
