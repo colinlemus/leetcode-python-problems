@@ -53,23 +53,30 @@
 
 
 def main(board):
+    # Create sets to store the values in each row, column, and box
     rows, cols, boxes = (
         [set() for _ in range(9)],
         [set() for _ in range(9)],
         [set() for _ in range(9)],
     )
 
+    # Iterate x axis of the board
     for i in range(9):
+        # Iterate y axis of the board
         for j in range(9):
+            # Check if the value is already in the set
             num = board[i][j]
             if num == ".":
                 continue
 
+            # If it is, the board is not valid
             box_idx = (i // 3) * 3 + j // 3
 
+            # Check if the value is already in the set
             if (num in rows[i]) or (num in cols[j]) or (num in boxes[box_idx]):
                 return False
 
+            # If not, add the value to the set
             rows[i].add(num)
             cols[j].add(num)
             boxes[box_idx].add(num)

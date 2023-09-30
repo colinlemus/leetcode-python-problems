@@ -36,11 +36,16 @@ from typing import List
 
 
 def main(strs: List[str]) -> List[List[str]]:
+    # Create a hashmap to store the anagram groups
     anagram_groups = {}
+
+    # Sort the words and use the sorted word as the key
     for word in strs:
         sorted_word = "".join(sorted(word))
+        # If the sorted word is already in the hashmap, append the word to the list
         if sorted_word in anagram_groups:
             anagram_groups[sorted_word].append(word)
         else:
             anagram_groups[sorted_word] = [word]
+
     return list(anagram_groups.values())
