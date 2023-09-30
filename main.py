@@ -105,14 +105,19 @@ def displayOneThruTen():
     )
 
 
-from twothrutwenty.twoSumSorted import main as twoSumSorted
-from twothrutwenty.threeSum import main as threeSum
-from twothrutwenty.containerMostWater import main as containerMostWater
-from twothrutwenty.trappingRainWater import main as trappingRainWater
-from twothrutwenty.bestTimeBuySellStock import main as bestTimeBuySellStock
-from twothrutwenty.longestSubstringNoRepeatCharacters import (
+from tenthrutwenty.twoSumSorted import main as twoSumSorted
+from tenthrutwenty.threeSum import main as threeSum
+from tenthrutwenty.containerMostWater import main as containerMostWater
+from tenthrutwenty.trappingRainWater import main as trappingRainWater
+from tenthrutwenty.bestTimeBuySellStock import main as bestTimeBuySellStock
+from tenthrutwenty.longestSubstringNoRepeatCharacters import (
     main as longestSubstringWithoutRepeatingCharacters,
 )
+from tenthrutwenty.longestRepeatingCharacterReplacement import (
+    main as longestRepeatingCharacterReplacement,
+)
+from tenthrutwenty.minimumWindowSubstring import main as minimumWindowSubstring
+from tenthrutwenty.slidingWindowMaximum import main as slidingWindowMaximum
 
 
 def displayTenThruTwenty():
@@ -162,10 +167,34 @@ def displayTenThruTwenty():
     )
 
     # Problem 17 - Longest Repeating Character Replacement
+    display_benchmark_results(
+        "Longest Repeating Character Replacement",
+        longestRepeatingCharacterReplacement,
+        "O(n)",
+        "O(1)",
+        "ABAB",
+        2,
+    )
 
     # Problem 18 - Minimum Window Substring
+    display_benchmark_results(
+        "Minimum Window Substring",
+        minimumWindowSubstring,
+        "O(n)",
+        "O(m)",
+        "ADOBECODEBANC",
+        "ABC",
+    )
 
     # Problem 19 - Sliding Window Maximum
+    display_benchmark_results(
+        "Sliding Window Maximum",
+        slidingWindowMaximum,
+        "O(n)",
+        "O(k)",
+        [1, 3, -1, -3, 5, 3, 6, 7],
+        3,
+    )
 
 
 def displayTwentyThruThirty():
@@ -192,6 +221,7 @@ def displayTwentyThruThirty():
     # Problem 29 - Koko Eating Bananas
 
     return
+
 
 def displayThirtyThruForty():
     # Problem 30 - Find Minimum in Rotated Sorted Array
