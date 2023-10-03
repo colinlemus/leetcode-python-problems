@@ -38,8 +38,8 @@
 #     board[i][j] is a digit or '.'.
 
 # Solution Benchmark Analysis:
-# Runtime: 18 μs (valid) 5 μs (invalid)
-# Memory Usage: 28 bytes (valid) 24 bytes (invalid)
+# Runtime: 18 μs
+# Memory Usage: 28 bytes
 # Time complexity: O(1)
 # Space complexity: O(1)
 
