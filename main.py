@@ -197,11 +197,27 @@ def displayTenThruTwenty():
     )
 
 
+from twentythruthirty.validParentheses import main as validParentheses
+from twentythruthirty.minimumAddMakeParenthesesValid import (
+    main as minimumAddMakeParenthesesValid,
+)
+
+
 def displayTwentyThruThirty():
     # Start of Stack problems
     # Problem 20 - Valid Parentheses
+    display_benchmark_results(
+        "Valid Parentheses", validParentheses, "O(n)", "O(n)", "{[]}"
+    )
 
-    # Problem 21 - Min Stack
+    # Problem 21 - Minimum Add to Make Parentheses Valid
+    display_benchmark_results(
+        "Minimum Add to Make Parentheses Valid",
+        minimumAddMakeParenthesesValid,
+        "O(n)",
+        "O(n)",
+        "())",
+    )
 
     # Problem 22 - Evaluate Reverse Polish Notation
 

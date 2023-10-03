@@ -23,14 +23,15 @@
 # Space complexity: O(1)
 
 # Explanation:
-# This algorithm finds the length of the longest substring that can be formed by replacing at most k characters in an input string. 
-# The algorithm uses a sliding window approach to iterate over the string. 
-# The algorithm uses a dictionary to store the frequency of each character in the current window. 
-# The algorithm updates the maximum frequency of any character in the current window and checks if the window needs to be shrunk to satisfy the constraint of at most k replacements. 
-# If the window needs to be shrunk, the algorithm moves the left pointer to the right and updates the frequency counter accordingly. 
-# The algorithm repeats this process until the right pointer reaches the end of the string. 
-# Finally, the algorithm returns the maximum length of the substring. 
+# This algorithm finds the length of the longest substring that can be formed by replacing at most k characters in an input string.
+# The algorithm uses a sliding window approach to iterate over the string.
+# The algorithm uses a dictionary to store the frequency of each character in the current window.
+# The algorithm updates the maximum frequency of any character in the current window and checks if the window needs to be shrunk to satisfy the constraint of at most k replacements.
+# If the window needs to be shrunk, the algorithm moves the left pointer to the right and updates the frequency counter accordingly.
+# The algorithm repeats this process until the right pointer reaches the end of the string.
+# Finally, the algorithm returns the maximum length of the substring.
 # This algorithm has a time complexity of O(n) and a space complexity of O(1).
+
 
 def main(s: str, k: int) -> int:
     # Initialize variables
