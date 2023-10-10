@@ -16,7 +16,7 @@
 # 1 <= k <= nums.length
 
 # Solution Benchmark Analysis:
-# Runtime: 0.9973 μs
+# Runtime: 0.998 μs
 # Memory Usage: 28 bytes
 # Time complexity: O(n)
 # Space complexity: O(k)

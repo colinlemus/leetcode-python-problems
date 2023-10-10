@@ -18,7 +18,7 @@
 # -10^9 <= nums[i] <= 10^9
 
 # Solution Benchmark Analysis:
-# Runtime: 0.3347 μs
+# Runtime: 0.33 μs
 # Memory Usage: 28 bytes
 # Time complexity: O(n)
 # Space complexity: O(n)
@@ -33,8 +33,38 @@ def main(nums):
     values = set()
 
     for num in nums:
-        if num in values:
+        if not values.add(num):
             return True
-        else:
-            values.add(num)
+    return False
+
+
+# Solution 2 - Not using Sets
+
+# Solution 2 Benchmark Analysis:
+# Runtime: 0.46 μs
+# Memory Usage: 28 bytes
+# Time complexity: O(n)
+# Space complexity: O(n)
+
+
+# Explanation:
+# The function checks for duplicate elements in an array and returns True if any are found, otherwise False.
+# It uses a dictionary for efficient lookups.
+
+
+def solution_2(nums):
+    # Create a dictionary to store the frequency of each element in the array
+    freq = {}
+
+    # Iterate over the array and update the frequency of each element in the dictionary
+    for num in nums:
+        # If the element is already in the dictionary, increment its frequency by 1
+        if num in freq:
+            # Increment the frequency of the element by 1
+            return True
+
+        # If the element is not in the dictionary, add it to the dictionary with a frequency of 1
+        freq[num] = 1
+
+    # Iterate over the dictionary and check if any element has a frequency greater than 1
     return False
