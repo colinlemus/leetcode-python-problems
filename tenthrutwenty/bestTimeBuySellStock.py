@@ -17,7 +17,7 @@
 # 0 <= prices[i] <= 10^4
 
 # Solution Benchmark Analysis:
-# Runtime: 1.3890 μs
+# Runtime: 1.38 μs
 # Memory Usage: 28 bytes
 # Time complexity: O(n)
 # Space complexity: O(1)

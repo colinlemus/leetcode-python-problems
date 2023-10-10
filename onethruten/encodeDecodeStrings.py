@@ -17,7 +17,7 @@
 
 
 # Solution Benchmark Analysis:
-# Runtime: 0.5223 μs
+# Runtime: 0.52 μs
 # Memory Usage: 56 bytes
 # Time complexity: O(n)
 # Space complexity: O(n)

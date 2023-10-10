@@ -14,7 +14,7 @@
 # s consists only of printable ASCII characters.
 
 # Solution Benchmark Analysis:
-# Runtime: 2.2308 μs
+# Runtime: 2.23 μs
 # Memory Usage: 24 bytes
 # Time complexity: O(n)
 # Space complexity: O(n)

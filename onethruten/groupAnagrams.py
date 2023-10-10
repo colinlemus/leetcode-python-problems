@@ -33,20 +33,18 @@
 # The algorithm returns the values of the hashmap as a list of lists, where each inner list contains the anagram group.
 # This algorithm has a time complexity of O(n*klogk) and a space complexity of O(n*k), where n is the length of the input list and k is the maximum length of a string in the input list.
 
+from collections import defaultdict
 from typing import List
 
 
 def main(strs: List[str]) -> List[List[str]]:
     # Create a hashmap to store the anagram groups
-    anagram_groups = {}
+    anagram_groups = defaultdict(list)
 
-    # Sort the words and use the sorted word as the key
     for word in strs:
+        # Sort the word to use as the key in the hashmap
         sorted_word = "".join(sorted(word))
-        # If the sorted word is already in the hashmap, append the word to the list
-        if sorted_word in anagram_groups:
-            anagram_groups[sorted_word].append(word)
-        else:
-            anagram_groups[sorted_word] = [word]
+        # Add the word to the anagram group
+        anagram_groups[sorted_word].append(word)
 
     return list(anagram_groups.values())

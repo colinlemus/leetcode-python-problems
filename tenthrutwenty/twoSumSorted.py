@@ -27,7 +27,7 @@
 # The tests are generated such that there is exactly one solution.
 
 # Solution Benchmark Analysis:
-# Runtime: 0.3858 μs
+# Runtime: 0.38 μs
 # Memory Usage: 72 bytes
 # Time complexity: O(n)
 # Space complexity: O(1)

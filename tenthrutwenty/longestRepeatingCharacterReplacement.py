@@ -17,7 +17,7 @@
 #     0 <= k <= s.length
 
 # Solution Benchmark Analysis:
-# Runtime: 1.8 μs
+# Runtime: 1.89 μs
 # Memory Usage: 28 bytes
 # Time complexity: O(n)
 # Space complexity: O(1)

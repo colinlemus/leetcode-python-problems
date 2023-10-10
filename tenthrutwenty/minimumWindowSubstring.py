@@ -19,7 +19,7 @@
 # s and t consist of English letters.
 
 # Solution Benchmark Analysis:
-# Runtime: 0.9973 μs
+# Runtime: 0.99 μs
 # Memory Usage: 28 bytes
 # Time complexity: O(n)
 # Space complexity: O(m)

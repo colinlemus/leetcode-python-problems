@@ -16,7 +16,7 @@
 # 0 <= height[i] <= 10^5
 
 # Solution Benchmark Analysis:
-# Runtime: 5.3106 μs
+# Runtime: 5.31 μs
 # Memory Usage: 28 bytes
 # Time complexity: O(n)
 # Space complexity: O(n)

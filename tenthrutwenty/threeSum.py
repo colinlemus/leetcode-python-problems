@@ -21,7 +21,7 @@
 # -10^5 <= nums[i] <= 10^5
 
 # Solution Benchmark Analysis:
-# Runtime: 2.7320 μs
+# Runtime: 2.73 μs
 # Memory Usage: 88 bytes
 # Time complexity: O(n^2)
 # Space complexity: O(n)

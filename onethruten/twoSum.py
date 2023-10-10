@@ -29,7 +29,8 @@
 # Space complexity: O(n)
 
 # Explanation:
-# This algorithm finds the indices of two numbers in an input list of integers that add up to a target value. # The algorithm first creates a dictionary to store the values of the input list.
+# This algorithm finds the indices of two numbers in an input list of integers that add up to a target value. 
+# The algorithm first creates a dictionary to store the values of the input list.
 # The algorithm then iterates over the input list and checks if the complement of the current number exists in the dictionary.
 # If the complement exists, the algorithm returns the indices of the two numbers.
 # If the complement does not exist, the algorithm adds the current number to the dictionary.

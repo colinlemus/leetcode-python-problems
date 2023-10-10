@@ -19,7 +19,7 @@
 # s consists of English letters, digits, symbols and spaces.
 
 # Solution Benchmark Analysis:
-# Runtime: 2.8692 μs
+# Runtime: 2.86 μs
 # Memory Usage: 28 bytes
 # Time complexity: O(n)
 # Space complexity: O(min(n, m))
