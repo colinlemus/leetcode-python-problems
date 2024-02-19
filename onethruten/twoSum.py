@@ -29,7 +29,7 @@
 # Space complexity: O(n)
 
 # Explanation:
-# This algorithm finds the indices of two numbers in an input list of integers that add up to a target value. 
+# This algorithm finds the indices of two numbers in an input list of integers that add up to a target value.
 # The algorithm first creates a dictionary to store the values of the input list.
 # The algorithm then iterates over the input list and checks if the complement of the current number exists in the dictionary.
 # If the complement exists, the algorithm returns the indices of the two numbers.
@@ -47,3 +47,32 @@ def main(nums, target):
             return [values[complement], i]
         else:
             values[num] = i
+
+
+import unittest
+
+
+class TestTwoSum(unittest.TestCase):
+    def test_example_one(self):
+        self.assertCountEqual(main([2, 7, 11, 15], 9), [0, 1])
+
+    def test_example_two(self):
+        self.assertCountEqual(main([3, 2, 4], 6), [1, 2])
+
+    def test_example_three(self):
+        self.assertCountEqual(main([3, 3], 6), [0, 1])
+
+    def test_with_zero(self):
+        self.assertCountEqual(main([0, 4, 3, 0], 0), [0, 3])
+
+    def test_repeated_numbers(self):
+        self.assertCountEqual(main([1, 5, 5, 11], 10), [1, 2])
+
+    def test_large_array(self):
+        nums = list(range(1, 1001))  # Large array
+        target = 1999  # The sum of the last two elements
+        self.assertCountEqual(main(nums, target), [998, 999])
+
+
+if __name__ == "__main__":
+    unittest.main()

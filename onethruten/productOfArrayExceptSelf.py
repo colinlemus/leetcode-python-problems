@@ -24,11 +24,23 @@
 # Space complexity: O(1)
 
 # Explanation:
-# This algorithm finds the product of all elements in an input list except for the element at the current index. # The algorithm first creates a list to store the output products, and initializes it with 1.
+# This algorithm finds the product of all elements in an input list except for the element at the current index.
+# The algorithm first creates a list to store the output products, and initializes it with 1.
 # The algorithm then calculates the prefix products of the input list, which are the products of all elements to the left of the current index.
 # The algorithm then calculates the suffix products of the input list, which are the products of all elements to the right of the current index.
 # The algorithm then multiplies the prefix and suffix products to get the final product of all elements except for the element at the current index.
 # The algorithm returns the list of products. This algorithm has a time complexity of O(n) and a space complexity of O(n), where n is the length of the input list.
+
+# Visualization:
+# {'prefix': 1, 'suffix': None, 'products': [1, 1, 1, 1]},
+# {'prefix': 1, 'suffix': None, 'products': [1, 1, 1, 1]},
+# {'prefix': 2, 'suffix': None, 'products': [1, 1, 1, 1]},
+# {'prefix': 6, 'suffix': None, 'products': [1, 1, 2, 1]},
+# {'prefix': None, 'suffix': 1, 'products': [1, 1, 2, 6]},
+# {'prefix': None, 'suffix': 4, 'products': [1, 1, 2, 6]},
+# {'prefix': None, 'suffix': 12, 'products': [1, 1, 8, 6]},
+# {'prefix': None, 'suffix': 24, 'products': [1, 12, 8, 6]},
+# {'prefix': None, 'suffix': None, 'products': [24, 12, 8, 6]}
 
 from typing import List
 
@@ -50,3 +62,43 @@ def main(nums: List[int]) -> List[int]:
         suffix *= nums[i]
 
     return products
+
+
+import unittest
+
+
+class TestProductOfArrayExceptSelf(unittest.TestCase):
+    def test_basic_example(self):
+        self.assertEqual(main([1, 2, 3, 4]), [24, 12, 8, 6])
+
+    def test_negative_numbers(self):
+        self.assertEqual(main([-1, 1, 0, -3, 3]), [0, 0, 9, 0, 0])
+
+    def test_single_zero(self):
+        self.assertEqual(main([0, 1, 2, 3, 4]), [24, 0, 0, 0, 0])
+
+    def test_multiple_zeros(self):
+        self.assertEqual(main([0, 0, 2, 3, 4]), [0, 0, 0, 0, 0])
+
+    def test_all_ones(self):
+        self.assertEqual(main([1, 1, 1, 1]), [1, 1, 1, 1])
+
+    def test_mixed_negative(self):
+        self.assertEqual(main([-1, -2, -3, -4]), [-24, -12, -8, -6])
+
+    def test_max_min_32bit(self):
+        self.assertEqual(
+            main([2**31 - 1, 2, 3, 4]),
+            [24, (2**31 - 1) * 3 * 4, (2**31 - 1) * 2 * 4, (2**31 - 1) * 2 * 3],
+        )
+
+    def test_large_array(self):
+        nums = [
+            1 for _ in range(1000)
+        ]  # Product will always be 1 for all elements except self
+        expected = [1 for _ in range(1000)]
+        self.assertEqual(main(nums), expected)
+
+
+if __name__ == "__main__":
+    unittest.main()

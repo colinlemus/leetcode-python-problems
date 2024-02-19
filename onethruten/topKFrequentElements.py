@@ -50,3 +50,38 @@ def main(nums: List[int], k: int) -> List[int]:
         ans.extend(buckets[freq])
         if len(ans) >= k:
             return ans[:k]
+
+import unittest
+
+class TestTopKFrequentElements(unittest.TestCase):
+    def test_example_one(self):
+        self.assertCountEqual(main([1,1,1,2,2,3], 2), [1,2])
+
+    def test_example_two(self):
+        self.assertCountEqual(main([1], 1), [1])
+
+    def test_all_elements_same(self):
+        self.assertCountEqual(main([2,2,2,2], 1), [2])
+
+    def test_k_equals_unique_elements(self):
+        result = main([4,1,2,1,2,3], 3)
+        expected_elements = {1, 2, 3, 4}  # Any of these could be correct due to frequency ties
+        self.assertTrue(set(result).issubset(expected_elements) and len(result) == 3)
+
+    def test_multiple_elements_same_frequency(self):
+        self.assertCountEqual(main([1,2,3,4,5,1,2,3], 3), [1,2,3])
+
+    def test_order_not_important(self):
+        # Since the problem statement allows for any order, multiple correct answers exist
+        result = main([1,1,2,2,3,3,4,4], 2)
+        self.assertTrue(result == [1,2] or result == [3,4] or result == [1,3] or result == [2,4])
+
+    def test_large_array(self):
+        nums = [i for i in range(1000)] * 100  # 1000 unique elements, each repeated 100 times
+        result = main(nums, 5)
+        self.assertEqual(len(result), 5)
+        for num in result:
+            self.assertIn(num, nums)
+
+if __name__ == '__main__':
+    unittest.main()

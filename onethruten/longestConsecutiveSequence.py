@@ -51,3 +51,39 @@ def main(nums):
             max_length = max(max_length, current_length)
 
     return max_length
+
+
+import unittest
+
+
+class TestLongestConsecutiveSequence(unittest.TestCase):
+    def test_basic_example(self):
+        self.assertEqual(main([100, 4, 200, 1, 3, 2]), 4)
+
+    def test_extended_sequence(self):
+        self.assertEqual(main([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]), 9)
+
+    def test_empty_array(self):
+        self.assertEqual(main([]), 0)
+
+    def test_single_element(self):
+        self.assertEqual(main([10]), 1)
+
+    def test_duplicates(self):
+        self.assertEqual(main([1, 2, 2, 3]), 3)
+
+    def test_negative_numbers(self):
+        self.assertEqual(main([-3, -2, -1, 0, 1]), 5)
+
+    def test_non_consecutive_array(self):
+        self.assertEqual(main([10, 20, 30]), 1)
+
+    def test_large_array_with_one_sequence(self):
+        self.assertEqual(main(list(range(-1000, 1001))), 2001)
+
+    def test_mixed_numbers(self):
+        self.assertEqual(main([-2, -3, 7, 5, 0, 1, 3, 4, 6]), 5)
+
+
+if __name__ == "__main__":
+    unittest.main()
