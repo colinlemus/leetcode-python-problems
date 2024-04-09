@@ -40,3 +40,43 @@ def main(s: str) -> bool:
         right -= 1
 
     return True
+
+
+import unittest
+
+
+class TestValidPalindrome(unittest.TestCase):
+    def test_palindrome_with_punctuation(self):
+        self.assertTrue(main("A man, a plan, a canal: Panama"))
+
+    def test_non_palindrome(self):
+        self.assertFalse(main("race a car"))
+
+    def test_only_non_alphanumeric(self):
+        self.assertTrue(main(",,,!!!"))
+
+    def test_case_insensitivity(self):
+        self.assertTrue(main("Aa"))
+
+    def test_with_numbers(self):
+        self.assertTrue(main("12321"))
+        self.assertFalse(main("123210"))
+
+    def test_empty_string(self):
+        self.assertTrue(main(""))
+
+    def test_single_character(self):
+        self.assertTrue(main("a"))
+        self.assertTrue(main("1"))
+
+    def test_large_string(self):
+        large_palindrome = (
+            "a" * 100000 + "b" * 100000 + "a" * 100000
+        )  # 300000 characters
+        self.assertTrue(main(large_palindrome))
+        large_non_palindrome = "a" * 100000 + "bc" + "a" * 100000  # 200002 characters
+        self.assertFalse(main(large_non_palindrome))
+
+
+if __name__ == "__main__":
+    unittest.main()

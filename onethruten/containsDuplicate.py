@@ -33,9 +33,11 @@ def main(nums):
     values = set()
 
     for num in nums:
-        if not values.add(num):
-            return True
-    return False
+        # Check if num is already in the set
+        if num in values:
+            return True  # Return True immediately if a duplicate is found
+        values.add(num)  # Otherwise, add the num to the set
+    return False  # Return False if no duplicates are found
 
 
 # Solution 2 - Not using Sets
@@ -68,3 +70,31 @@ def solution_2(nums):
 
     # Iterate over the dictionary and check if any element has a frequency greater than 1
     return False
+
+
+import unittest
+
+
+class TestContainsDuplicate(unittest.TestCase):
+    def run_solution_tests(self, solution):
+        self.assertFalse(solution([]), "Failed on empty list")
+        self.assertFalse(solution([1, 2, 3, 4, 5]), "Failed on no duplicates")
+        self.assertTrue(solution([1, 2, 3, 4, 4]), "Failed on with duplicates")
+        self.assertTrue(solution(list(range(10000)) + [9999]), "Failed on large list")
+        self.assertTrue(solution([-1, -2, -3, -1]), "Failed on negative numbers")
+        self.assertFalse(solution(list(range(-10000, 10000))), "Failed on large range")
+        self.assertTrue(solution([1.1, 2.2, 3.3, 1.1]), "Failed on non-integer values")
+        self.assertTrue(solution([1, 2, 3, 1, 2, 3]), "Failed on repeating patterns")
+        self.assertFalse(solution([1]), "Failed on single element")
+        self.assertTrue(solution([1, 1, 1, 1]), "Failed on all duplicates")
+        self.assertTrue(solution([True, False, True]), "Failed on list of booleans")
+
+    def test_solution_1(self):
+        self.run_solution_tests(main)
+
+    def test_solution_2(self):
+        self.run_solution_tests(solution_2)
+
+
+if __name__ == "__main__":
+    unittest.main()

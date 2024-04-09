@@ -69,3 +69,33 @@ def main(s, t):
 
     # If we've gone through both strings without returning False, they must be anagrams
     return True
+
+import unittest
+
+class TestValidAnagram(unittest.TestCase):
+    def test_anagram_basic(self):
+        self.assertTrue(main("anagram", "nagaram"))
+
+    def test_non_anagram_basic(self):
+        self.assertFalse(main("rat", "car"))
+
+    def test_empty_strings(self):
+        self.assertTrue(main("", ""))
+
+    def test_unequal_lengths(self):
+        self.assertFalse(main("a", "ab"))
+
+    def test_repeated_characters(self):
+        self.assertTrue(main("aaabb", "babaa"))
+        self.assertFalse(main("aabbb", "baaab"))
+
+    def test_identical_strings(self):
+        self.assertTrue(main("silent", "silent"))
+
+    def test_large_strings(self):
+        str1 = "a" * 50000 + "b" * 50000  # 100000 characters
+        str2 = "b" * 50000 + "a" * 50000  # 100000 characters
+        self.assertTrue(main(str1, str2))
+
+if __name__ == '__main__':
+    unittest.main()
